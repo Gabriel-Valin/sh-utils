@@ -1,0 +1,6 @@
+apt update && apt upgrade
+
+apt install unattended-upgrades -y
+
+sed -i 's|//      "${distro_id}:${distro_codename}-updates";
+|upgrade_type = security|g' /etc/dnf/automatic.conf
